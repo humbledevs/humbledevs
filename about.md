@@ -1,9 +1,10 @@
 ---
-title: About me
+title: About Humble
 ---
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum ligula eu sapien consequat eleifend.
+Humble is a team of experienced developers distributed across globe working remotely.
+We are enthusiastic about exploring technologies, learning and about team work.
 
-Donec nec dolor erat, condimentum sagittis sem. Praesent porttitor porttitor risus, dapibus rutrum ipsum gravida et. Integer lectus nisi, facilisis sit amet eleifend nec, pharetra ut augue. Integer quam nunc, consequat nec egestas ac, volutpat ac nisi.
+You can hire us for mobile development requirement in React Native or Web development in React.
 
-Find me on [GitHub](https://github.com/muan) or [Twitter](https://twitter.com/muanchiou).
+Find us on [GitHub](https://github.com/humbledevs) or [Mail](mailto:robinnagpal.tiet@gmail.com) us.

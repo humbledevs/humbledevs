@@ -1,7 +1,7 @@
 # ----------- CONFIGURABLE START -----------
-title:            "Scribble"
+title:            "Humble"
 description:      "Such theme, very cool."
-url:              http://scribble.muan.co # Site url, without a slash at the end.
+url:              https://humbledevs.github.io/ # Site url, without a slash at the end.
 signoff:          "muan" # Your name
 facebook_appid:   # APP ID for like button, remove from /_includes/share.html if unwanted.
 google_analytics: # Set tracking, remove from /javascripts/basic.js if unwanted.
@@ -11,7 +11,7 @@ links:
   - name:         Posts
     url:          /
     external:     false
-  - name:         About me
+  - name:         About us
     url:          /about
     external:     false
 # ------------ CONFIGURABLE END ------------
