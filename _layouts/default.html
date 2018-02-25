@@ -14,12 +14,12 @@
     <a href="{{ site.url }}">
       <img src="{{ site.url }}/images/humble.png" alt="Home" width="53" height="59">
     </a>
-    <p>{{ site.title }}</p>
+    <p class="title">{{ site.title }}</p>
   </header>
   <div class="mw7 bg-white mt4 mb3 center br2-ns bt bb ba-ns b--light-gray">
     <nav class="bb b--light-gray pv4 tc" aria-label="Main">
       {% for link in site.links %}
-      <a class="link blue hover-mid-gray mh2 pv1" href="{% unless link.external %}{{ site.url }}{% endunless %}{{ link.url }}">
+      <a class="link dark hover-mid-gray mh2 pv1" href="{% unless link.external %}{{ site.url }}{% endunless %}{{ link.url }}">
         {{ link.name }}
       </a>
       {% endfor %}
@@ -48,7 +48,7 @@
     </main>
     {% if is_post %}{% include pagination.html %}{% endif %}
   </div>
-  <footer class="mw7 center tc pt3 pb4 silver">
+  <footer class="mw7 center tc pt3 pb4 green">
     Apps written like poetry...
     <img src="{{ site.url }}/images/humble3.png" alt="humble" class="mt4 db center" />
   </footer>
