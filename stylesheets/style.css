@@ -23,7 +23,7 @@
 
 /* Markdown styles */
 .markdown-body a {
-  text-decoration: none;
+  text-decoration: underline;
   color: #222831;
 }
 .markdown-body .highlighter-rouge {
@@ -32,6 +32,7 @@
 .markdown-body pre {
   margin: 0;
   overflow: auto;
+  font-size: 14px;
 }
 .markdown-body > .highlighter-rouge,
 .markdown-body > blockquote {

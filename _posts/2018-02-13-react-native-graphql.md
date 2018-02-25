@@ -9,35 +9,71 @@ GraphQL also made at Facebook enables writing highly performant api. GraphQL all
 
 Apollo Graphql is the most popular open-source platform for writing GraphQL Queries and Graphql Server. Apollo GraphQL can be nicely integrated with React Native applications.
 
-<!-- 
-> Sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Abore et dolore magna aliqua. Ut enim ad minim veniam, quis.
->
-> – Akei Yue
+<img style="width: 100px;margin: 30px 40%;" src="/images/mobilecloud.png" />
 
-1. List with code
+Here are the steps to configure Apollo Graphql in React Native app. For this app I used [Github GraphQL API](https://developer.github.com/v4/):
 
-   ```
-   not highlighted
-   multi line
-   ```
+1. Install required libraries:
 
-2. List with code
-   ```javascript
-   var dom = document.getElementById("boom");
-   console.log(dom);
-   ```
+    ```
+    npm install react-apollo --save
+    npm install apollo-client --save
+    npm install graphql-tag --save
+    ```
 
----
+2. Create apollo client
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+    ```
+    import { ApolloClient, createNetworkInterface } from "apollo-client";
+    import { ApolloProvider } from "react-apollo";
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+    const networkInterface = createNetworkInterface({
+      uri: "https://api.github.com/graphql"
+    });
+    networkInterface.use([
+      {
+        applyMiddleware(req, next) {
+          if (!req.options.headers) {
+            req.options.headers = {};
+          }
+          req.options.headers.authorization = `Bearer ${Config.GITHUB_TOKEN}`;
+          next();
+        }
+      }
+    ]);
 
-```html
-<dialog>
-  <header>Headsup</header>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-  <button type="button" class="js-close-dialog">Close</button>
-</dialog>
-```
--->
+    const client = new ApolloClient({
+      networkInterface
+    });
+
+    export default (() => (
+      <ApolloProvider client={client}>
+        <RootComponent />
+      </ApolloProvider>
+    ));
+    ```
+3. Add queries to components:
+
+    ```
+    import gql from "graphql-tag";
+    import { graphql } from "react-apollo";
+
+    const UserDetailsQuery = gql`
+      query($login: String!) {
+        user(login: $login) {
+          avatarUrl
+          bio
+          name
+        }
+      }
+    `;
+
+    class UserDetails extends React.Component {
+      // Component code here
+    }
+
+    export default (UserDetailsMapped = graphql(UserDetailsQuery)(UserDetails));
+
+    ```
+
+The code for example above is [here](https://github.com/humbledevs/react-native-graphql). The integration is straightforward and advantages many.
